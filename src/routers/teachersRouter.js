@@ -1,15 +1,15 @@
 const express = require("express");
-const students = require("../models/Students");
+const teachers = require("../models/Teachers");
 
-const studentsRouter = express.Router();
+const teachersRouter = express.Router();
 
-studentsRouter
+teachersRouter
   .get("/", (req, res) => {
     /**
      * Express is smart enough to figure out the
      * response header's MIME type
      */
-    // res.send(students);
+    // res.send(teachers);
     // res.send("<h1>Hello</h1>")
 
     /**
@@ -17,13 +17,13 @@ studentsRouter
      * can be chained together
      */
     // res.status(200);
-    // res.json({students}); // These two statements can be chained together
+    // res.json({teachers}); // These two statements can be chained together
 
     /**
      * It's a good practice to be explicit
      * of the status codes and response types
      */
-    res.status(200).json({ students });
+    res.status(200).json({ teachers });
   });
 
-  module.exports = studentsRouter;
+  module.exports = teachersRouter;

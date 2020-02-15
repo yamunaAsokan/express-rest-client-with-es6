@@ -1,7 +1,7 @@
 const express = require("express");
 const bodyParser = require("body-parser");
-const studentsRouter = require("./routers/studentsRouter");
-const studentRouter = require("./routers/studentRouter");
+const teachersRouter = require("./routers/teachersRouter");
+const teacherRouter = require("./routers/teacherRouter");
 
 const app = express();
 
@@ -14,12 +14,12 @@ app.use(bodyParser.json());
 // });
 
 app.get("/", (req, res) => {
-  res.send("Hello");
+  res.send("Hello Kutty");
 });
 
-app.use("/students", studentsRouter);
+app.use("/teachers", teachersRouter);
 
-app.use("/student", studentRouter)
+app.use("/teacher", teacherRouter)
 
 const server = app.listen(8080, () => {
   console.log(`Server running in port ${server.address().port}`);
